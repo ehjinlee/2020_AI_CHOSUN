@@ -33,10 +33,10 @@ print(x_train[0], type(x_train[0]))
 
 #softmax는 확률적으로 가장 높은 값을 선택해줌
 #make one hot
-print(max(y_train))
+print(max(y_train)) #y_train 6만개의 값중 최대값이 몇인지 알기 위해 쓴 식
 temp_y = []
 for one_y_val in y_train: #y_train(6만개 존재) 안에서 첫번째 꺼에 저장-> 두번째꺼에 저장 -> 세번째거에 저장...... 반복, one_y_val은 y_train에 입력되어있는 값들
-    zero_array = np.zeros(10) #zero_array라는 공간을 만들고 10개의 0이 들어감 : zero_array = [0 0 0 0 0 0....]
+    zero_array = np.zeros(10) #zero_array라는 공간을 만들고 10개의 0이 들어감 : zero_array = [0 0 0 0 0 0....], 10으로 한 이유는 y_train의 최대값이 9이기 때문에 0~9 사이의 값을 저장하려고
     zero_array[one_y_val] = 1
     # one_y_val의 값이 해당하는 위치에 1이라는 설정 저장.
     # ex)첫번째 반복일때 : y_train 첫번째 값이 1 이면 zero_array=[0 1 0 0 0 0...], 두번째 반복일때 : y_train 두번째 값이 5이면 zero_array=[0 0 0 0 0 1 0 0 0 0]
